@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta id="metaKeywords" content="Gradle 构建一个Java程序" name="keywords">
+<meta name="description" content="Gradle 构建一个Java程序" />
+<meta name="keywords" content="Gradle 构建一个Java程序" />
+<title>Gradle Hello World 构建文件</title>
+<link rel="stylesheet" href="../../stylesheets/styles.css">
+<link rel="stylesheet" href="../../stylesheets/custom.css">
+</head>
+<body>
+<div class="detailBlog">
+	<h1 align="center">构建一个Java程序</h1>
+	<p class="view">
+	现在让我们看一下Gradle如何构建一个Java程序，这里我们仅用一个非常简单的Java程序来展示其用法。
+	</p>
+	新建一个文件夹“Hello”，其目录结构如下，作为HelloWord工程文件夹。
+	<pre>
+	<code>
+├── build.gradle
+└── src
+ └── main
+ └── java
+ └── test
+ └── HelloWorld.java
+	</code>
+	</pre>
+	build.gradle构建文件内容如下：
+	<pre>
+	<code>
+apply plugin: 'java'
+	</code>
+	</pre>
+	
+	HelloWorld.java类文件内容如下：
+	<pre>
+	<code>
+package test;
+
+public class HelloWorld {
+ public static void main(String args[]) {
+ System.out.println("hello, world");
+ }
+}
+	</code>
+	</pre>
+	
+执行如下命令将会得到输出如下：
+	<pre>
+	<code>
+$ gradle build
+:compileJava UP-TO-DATE
+:processResources UP-TO-DATE
+:classes UP-TO-DATE
+:jar UP-TO-DATE
+:assemble UP-TO-DATE
+:compileTestJava UP-TO-DATE
+:processTestResources UP-TO-DATE
+:testClasses UP-TO-DATE
+:test UP-TO-DATE
+:check UP-TO-DATE
+:build UP-TO-DATE
+
+BUILD SUCCESSFUL
+
+Total time: 5.254 secs
+    </code>
+	</pre>
+    上述目录结构为Gradle默认要求的标准结构。<BR/>
+    构建命令执行后，不仅Java文件被编译成类文件，同时生成以文件夹目录名相同的Jar文件。
+    	<pre>
+	<code>
+├── build
+│  ├── classes
+│  │  └── main
+│  │  └── test
+│  │  └── HelloWorld.class
+│  ├── dependency-cache
+│  ├── libs
+│  │  └── Hello.jar
+│  ├── tmp
+│  │  └── compileJava
+│  │  └── jar
+│  │    └── MANIFEST.MF
+├── build.gradle
+└── src
+ └── main
+ └── java
+ └── test
+ └── HelloWorld.java
+     </code>
+	</pre>
+    
+</div>
+</body>
+</html>

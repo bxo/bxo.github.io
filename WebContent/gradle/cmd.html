@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta id="metaKeywords" content="Gradle 构建一个Java程序" name="keywords">
+<meta name="description" content="Gradle 构建一个Java程序" />
+<meta name="keywords" content="Gradle 构建一个Java程序" />
+<title>Gradle 主要命令</title>
+<link rel="stylesheet" href="../../stylesheets/styles.css">
+<link rel="stylesheet" href="../../stylesheets/custom.css">
+</head>
+<body>
+<div class="detailBlog">
+	<h1 align="center">Gradle 主要命令</h1>
+	<p class="view">
+	这里仅列出Gradle几个经常用到的命令如下：
+	</p>
+	<pre>
+	<code>
+--help or -h
+帮助信息
+-Dproperty=value
+定义系统属性. 可用来通过命令行传递参数，如： -Dcustom.config=my-config.properties.
+--info or -i
+设置 Gradle日志级别为INFO
+--debug or -d
+打开debug日志包括stack traces
+对调试问题非常有帮助
+--dry-run or -m
+试运行构建文件，并不真正执行任何任务
+--quiet or -q
+安静模式，仅输出错误信息
+--gui
+启动 Gradle图形界面.
+--stacktrace or -s
+打开简洁stack trace日志，对对调试问题非常有帮助。 
+--full-stacktrace or -S
+打开全部stack trace日志，包括所有Groovy内部方法调用。
+properties
+列出当前构建的所有属性
+tasks
+列出当前构建的所有任务
+	</code>
+	</pre>
+    </div>
+</body>
+</html>

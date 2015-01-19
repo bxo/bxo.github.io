@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta id="metaKeywords" content="Gradle Hello World 构建文件" name="keywords">
+<meta name="description" content="Gradle Hello World 构建文件" />
+<meta name="keywords" content="Gradle Hello World 构建文件" />
+<title>Gradle Hello World 构建文件</title>
+<link rel="stylesheet" href="../../stylesheets/styles.css">
+<link rel="stylesheet" href="../../stylesheets/custom.css">
+</head>
+<body>
+<div class="detailBlog">
+		<h1 align="center">Hello World 构建文件</h1>
+	<p class="view">
+	创建一个文件，命名为“build.gradle”。文件内容如下：
+	</p>
+	<pre>
+	<code>
+task helloWorld << {
+	println 'hello, world'
+}
+	</code>
+	</pre>
+执行如下命令将会得到输出如下：
+	<pre>
+	<code>
+$ gradle -q helloWorld
+hello, world
+    </code>
+	</pre>
+    
+    <p class="view">
+	下面我们再试另外一个简单的例子。其中有两个任务和一个依赖，<br/>
+	将build.gradle文件内容改为如下，执行命令可看到输出上面相同的内容。
+	</p>
+	<pre>
+	<code>
+task hello << {
+print 'hello, '
+}
+task world(dependsOn: hello) << {
+println 'world'
+}
+	</code>
+	</pre>
+	我们执行第二个任务，结果是输出相同的内容。
+	<pre>
+	<code>
+$ gradle -q world
+hello, world
+    </code>
+	</pre>
+    </div>
+</body>
+</html>

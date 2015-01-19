@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta id="metaKeywords" content="Gradle 任务动作 - Task Action" name="keywords">
+<meta name="description" content="Gradle 任务动作 - Task Action" />
+<meta name="keywords" content="Gradle 任务动作 - Task Action" />
+<title>Gradle 任务动作 - Task Action</title>
+<link rel="stylesheet" href="../../stylesheets/styles.css">
+<link rel="stylesheet" href="../../stylesheets/custom.css">
+</head>
+<body>
+<div class="detailBlog">
+	<h1 align="center">Gradle 任务动作 - Task Action</h1>
+	<p class="view">
+	  我们可以用左移“<<”符号来为任务指定动作。
+	</p>
+	<pre>
+	<code>
+task hello << {
+ println 'hello, world'
+}
+	</code>
+	</pre>
+	我们还可以多次指定动作给同一个任务，这些动作将累积依次执行。
+
+	<pre>
+	<code>
+task hello
+hello << {
+ print 'hello, '
+}
+hello << {
+ println 'world'
+}
+    </code>
+	</pre>
+
+	执行如下命令将会看到输出结果如下：
+	<pre>
+	<code>
+$  gradle hello
+:hello
+hello, world
+
+BUILD SUCCESSFUL
+
+Total time: 4.649 secs
+     </code>
+	</pre>
+	</div>
+</body>
+</html>

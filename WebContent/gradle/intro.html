@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta id="metaKeywords" content="Gradle 指南" name="keywords">
+<meta name="description" content="Gradle 指南" />
+<meta name="keywords" content="Gradle 指南" />
+	
+<title>Gradle 指南</title>
+<link rel="stylesheet" href="../../stylesheets/styles.css">
+<link rel="stylesheet" href="../../stylesheets/custom.css">
+</head>
+<body>
+<div class="detailBlog">
+		<h1 align="center">Gradle 简介</h1>
+	<h4>
+	项目自动化
+	</h4>
+			
+	<p class="view">
+             多数程序员大部分工作都是在IDE中完成的。编译、重构代码，执行单元和集成测试，提交代码等等。如果编译和测试通过了，那么基本上可以确信一切就都没问题了。
+             然而我们会时不时遇到这样的情况。自己提交的代码别人更新后就不能编译通过了，几番折腾后才发现自己有部分代码忘记提交了...。
+             为了能让QA开始测试最新实现的功能，程序员不得不将新版本手动发布到QA环境。
+             如果是敏捷开发，项目发布周期往往只有一两周，不断出现的项目集成问题和枯燥的重复发布工作会使程序员感到非常沮丧。
+    </p>
+    <p class="view">
+            上面所有的人工操作，都是费时而且容易出错的。 系统的构建通常都按固定的步骤执行，例如，我们通常都是先编译代码，再执行测试，最后打包成可发布的构件。
+            如果这些步骤可由软件工具代劳，这样即减少了开发人员的工作，又能降低出错和及时发现错误。当然我们可以通过写一些命令脚本来实现这种软件工具。然而，由于命令脚本依赖于系统，Windows或Unix，很难移植，也就不能成为大家共用的工具。 
+            因此，一个不依赖于系统（基于Java）的项目自动化工具对提高团队效率和保障项目最终成功是必不可少的。
+    </p>
+
+	<h4>
+	构建工具
+	</h4>
+	 <p class="view">
+            第一个成功并被广泛采用的构建工具是Ant。Ant提供了不依赖于系统平台，可扩展的Java构建工具。但Ant有一个缺点就是缺少对工程依赖包的管理。而且， Ant为了提供最大的灵活性，没有约定的规范可遵循。
+            这就导致了另一个流行的构建产品的出现-Maven。Maven提供了严格的标准并支持依赖管理，然而其提供的标准又过于严格，项目很难偏离标准，因此缺少了灵活性。
+            除了Ant和Maven这两个最流行的构建工具外，其他还有Make, Ivy, Rake, Gant, Scons, SBT,Leinengen, and Buildr等工具。
+    </p>
+
+	<p class="view">
+     Gradle汲取了众多构建工具之所长，使用了统一的Groovy DSL脚本和Java API。作为模型驱动和基于Java的构建工具，很快被诸多知名公司和开源社区所采用。 
+     Gradle取了两个极端的中和。既有标准可供遵循，又可以通过丰富的脚本语言扩展或重定义这些标准。
+    </p>
+    
+    <h4>
+	构建文件
+	</h4>
+	 <p class="view">
+            构建文件可能有非常复杂的定义或逻辑，因此需要具有表现良好的文件格式。XML当然是首选，正如Ant的build.xml,Maven的POM文件一样。然而事实证明，当XML文件非常大时，是很难读懂的。
+     Gradle使用Groovy用来描述其构建文件。Groovy是一个动态的JVM语言。与Java很相似。每一个Gradle构建文件都是一个可执行的Groovy脚本。
+            如果刚开始用Gradle,你可能还意识不到自己在写Groovy脚本，不过当构建文件越来越复杂的时候，Groovy语言就发挥了它的作用。你可以在构建文件中用Groovy语言实现自己的逻辑而不必象Maven那样不得不通过插件来实现。
+    </p>
+
+    <h4>
+	领域专用语言 （Domain-Specific Build Languages）
+	</h4>
+	 <p class="view">
+            事实上，Gradle试图呈现给用户的不是纯Groovy，而是专为构建代码任务而裁剪的领域专用语言（DSL）。 Gradle用户可以直接学习这个语言就可以用好Gradle而不用有Groovy语言基础。
+     DSL通过用来构建软件的专有方言来描述构建任务。 当然你总可以采用Groovy的通用语言编程来描述构建，不过Gradle倾向于用户优先使用DSL而非Groovy的通用语言编程。
+    </p>
+
+	<p class="view">
+    </p>
+    
+    
+    
+    </div>
+</body>
+</html>
