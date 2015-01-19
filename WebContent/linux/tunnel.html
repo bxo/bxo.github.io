@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta id="metaKeywords" content="SSH Port Forwarding (SSH Tunneling)" name="keywords">
+<meta name="description" content="SSH Port Forwarding (SSH Tunneling)" />
+<meta name="keywords" content="SSH Port Forwarding (SSH Tunneling)" />
+<title>SSH Port Forwarding (SSH Tunneling)</title>
+<link rel="stylesheet" href="../../stylesheets/styles.css">
+<link rel="stylesheet" href="../../stylesheets/custom.css">
+</head>
+<body>
+<div class="detailBlog">
+		<h1 align="center">SSH Port Forwarding (SSH Tunneling)</h1>
+	
+    <pre>
+    	<code>
+ssh -L localport:host:hostport user@ssh_server -N 
+
+where: 
+-L - port forwarding parameters (see below) 
+localport - local port (chose a port that is not in use by other service) 
+host - server that has the port (hostport) that you want to forward 
+hostport - remote port 
+-N - do not execute a remote command, (you will not have the shell, see below) 
+user - user that have ssh access to the ssh server (computer) 
+ssh_server - the ssh server that will be used for forwarding/tunneling 
+	</code>
+	</pre>
+	
+		<p class="view">
+	Without the -N option you will have not only the forwardig port but also the remote
+ shell. Try with and without it to see the difference. 
+
+	</p>
+	
+    <pre>
+    	<code>
+Note: 
+1. Privileged ports (localport lower then 1024) can only be forwarded by root. 
+2. In the ssh line you can use multiple -L like in the example... 
+3. Of course, you must have ssh user access on secure_computer and moreover 
+   the secure computer must have access to host:hostport 
+4. Some ssh servers do not allow port forwarding (tunneling). See the sshd man 
+   pages for more about port forwarding (the AllowTcpForwarding keyword is set to 
+   NO in sshd_config file, by default is set to YES)... 
+	</code>
+	</pre>
+	
+	<p class="view">
+	Example: 
+	</p>
+	
+	    <pre>
+    	<code>
+ssh -L 8888:server.remote.ip:8080 user@server.login.ip -N 
+ssh -L 8888:server.remote.ip:8080 -L 4848:server.remote.ip:4848 user@server.login.ip -N 
+	</code>
+	</pre>
+</div>
+</body>
+</html>

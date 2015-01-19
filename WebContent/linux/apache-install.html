@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta id="metaKeywords" content="手动安装 Apache Server 2.0.63" name="keywords">
+<meta name="description" content="手动安装 Apache Server 2.0.63" />
+<meta name="keywords" content="手动安装 Apache Server 2.0.63" />
+<title>手动安装 Apache Server 2.0.63</title>
+<link rel="stylesheet" href="../../stylesheets/styles.css">
+<link rel="stylesheet" href="../../stylesheets/custom.css">
+</head>
+<body>
+<div class="detailBlog">
+		<h1 align="center">手动安装 Apache Server 2.0.63</h1>
+	
+	<p class="view">
+             官方下载  <a href="https://archive.apache.org/dist/httpd/httpd-2.0.63.tar.gz">httpd-2.0.63.tar.gz</a>
+    </p>
+	
+	<p class="view">
+	1.解压缩httpd-2.0.63.tar.gz到临时目录如~/httpd-2.0.63 
+	</p>
+	
+    <pre>
+    	<code>
+tar -zxvf httpd-2.0.63.tar.gz
+	</code>
+	</pre>
+	
+		<p class="view">
+	2.进入~/httpd-2.0.63目录，执行 
+	</p>
+	
+    <pre>
+    	<code>
+#./configure --prefix=/usr/local/apache2 --enable-module=so 
+#make 
+#make install 
+	</code>
+	</pre>
+	
+	<p class="view">
+	3.启动和停止apache 
+	</p>
+	
+	    <pre>
+    	<code>
+#./apachectl start 
+#./apachectl start 
+	</code>
+	</pre>
+	<p class="view">
+如果启动时提示: 
+httpd: Could not determine the server's fully qualified domain name, using 127.0.1.1 for ServerName
+<br/>
+可以忽略此信息或在http.conf中加一行: 
+ServerName 127.0.0.1:80 
+  </p>
+  
+	<p class="view">
+	如果启动失败，在 logs/error_log 发现如下出错信息
+	<br/>
+	Couldn't set permissions on cross-process lock
+	</p>
+	 
+	<p class="view">
+	检查 conf/httpd.conf 文件中的 User 和 Group 属性值。 Group值有如果是 “#-1”等错误值，确保配置如下
+	</p>
+	    <pre>
+    	<code>
+User nobody
+Group nogroup
+	</code>
+	</pre>
+</div>
+</body>
+</html>

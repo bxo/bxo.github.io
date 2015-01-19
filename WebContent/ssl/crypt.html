@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta id="metaKeywords" content="密码技术 Cryptographic Techniques" name="keywords">
+<meta name="description" content="密码技术 Cryptographic Techniques" />
+<meta name="keywords" content="密码技术 Cryptographic Techniques" />
+<title>密码技术 Cryptographic Techniques</title>
+<link rel="stylesheet" href="../../stylesheets/styles.css">
+<link rel="stylesheet" href="../../stylesheets/custom.css">
+</head>
+<body>
+<div class="detailBlog">
+		<h1 align="center">密码技术-Cryptographic Techniques</h1>
+	<p align="right">
+          原贴 <a href="http://httpd.apache.org/docs/2.2/ssl/ssl_intro.html">http://httpd.apache.org/docs/2.2/ssl/ssl_intro.html</a>
+    </p>
+	
+	<h4>
+	密码算法
+	</h4>
+	
+	<p class="view">
+	假设Alice想要发一个消息给她的银行要转一笔钱，由于消息中包含她的账号信息和转出金额，她希望这条消息能是私密的,。
+	一个办法是使用密码算法，以加密的形式传输消息，消息直到解密前都不可读。
+	一旦消息加密，只能用一个密钥来解密。没有密钥，加密消息对任何人来说都是无用的。
+	好的密码算法使入侵者（黑客）很难破解消息。
+	</p>
+	
+	<p class="view">
+	有两种密码算法: 常规 （Conventional） 和 公钥 （Public key）.
+	</p>
+	
+	<h5>
+	常规密码 - Conventional cryptography
+	</h5>
+	<p style="padding-left:30px;">
+	also known as symmetric cryptography, requires the sender and receiver to share a key: a secret piece of information that may be used to encrypt or decrypt a message. As long as this key is kept secret, nobody other than the sender or recipient can read the message. If Alice and the bank know a secret key, then they can send each other private messages. The task of sharing a key between sender and recipient before communicating, while also keeping it secret from others, can be problematic.
+	</p>
+	
+	<h5>
+	公钥密码 - Public key cryptography
+	</h5>
+	<p style="padding-left:30px;">
+	also known as asymmetric cryptography, solves the key exchange problem by defining an algorithm which uses two keys, each of which may be used to encrypt a message. If one key is used to encrypt a message then the other must be used to decrypt it. This makes it possible to receive secure messages by simply publishing one key (the public key) and keeping the other secret (the private key).
+	</p>
+	
+	<p class="view">
+	Anyone can encrypt a message using the public key, but only the owner of the private key will be able to read it. In this way, Alice can send private messages to the owner of a key-pair (the bank), by encrypting them using their public key. Only the bank will be able to decrypt them.
+	</p>
+	
+</div>
+</body>
+</html>
