@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta id="metaKeywords" content="Cloud Foundry Introduction" name="keywords">
+<title>Cloud Foundry 简介</title>
+<link rel="stylesheet" href="../../stylesheets/styles.css">
+<link rel="stylesheet" href="../../stylesheets/custom.css">
+</head>
+<body>
+<div class="detailBlog">
+	<h1 align="center">Orgs, Spaces, Roles, and Permissions </h1>
+
+	<p class="view">
+           
+        
+
+        <p>Cloud Foundry uses role-based access control (RBAC), with each role granting
+permissions in either an org or a space.</p>
+
+<h2><a id="orgs"></a>Orgs</h2>
+
+<p>An org is a development account that an individual or multiple collaborators can own and use. All collaborators access an org with user accounts. Collaborators in an org share a resource quota plan, applications, services availability, and
+custom domains.</p>
+
+<h2><a id="spaces"></a>Spaces</h2>
+
+<p>Every application and service is scoped to a space.
+Each org contains at least one space.
+A space provides a set of users access to a shared location for application
+development, deployment, and maintenance.
+Each space role applies only to a particular space.</p>
+
+<h2><a id="roles"></a>Roles and Permissions</h2>
+
+<p>A user can have one or more roles.
+The combination of these roles defines the user’s overall permissions in the org
+and within specific spaces in that org.</p>
+
+<h3><a id="org-roles"></a>Org Roles and Permissions</h3>
+
+<h4>Org Manager</h4>
+
+<p>Assign this role to managers or other users who need to administer the account.</p>
+
+<p>An Org Manager can:</p>
+
+<ul>
+<li>Add and manage users</li>
+<li>View users and edit org roles</li>
+<li>View the org quota</li>
+<li>Create, view, edit, and delete spaces</li>
+<li>Invite and manage users in spaces</li>
+<li>View the status, number of instances, service bindings, and resource use of each application in every space in the org</li>
+<li>Add domains</li>
+</ul>
+
+<h4>Org Auditor</h4>
+
+<p>Assign this role to people who need to view but not edit user information and
+org quota usage information.</p>
+
+<p>An Org Auditor can:</p>
+
+<ul>
+<li>View users and org roles</li>
+<li>View the org quota</li>
+</ul>
+
+<h3><a id="space-roles"></a>Space Roles and Permissions</h3>
+
+<h4>Space Manager</h4>
+
+<p>Assign this role to managers or other users who need to administer a space.</p>
+
+<p>A Space Manager can:</p>
+
+<ul>
+<li>Add and manage users in the space</li>
+<li>View the status, number of instances, service bindings, and resource use of each application in the space</li>
+</ul>
+
+<h4>Space Developer</h4>
+
+<p>Assign this role to application developers or other users who need to manage
+applications and services in a space.</p>
+
+<p>A Space Developer can:</p>
+
+<ul>
+<li>Deploy an application</li>
+<li>Start or stop an application</li>
+<li>Rename an application</li>
+<li>Delete an application</li>
+<li>Create, view, edit, and delete services in a space</li>
+<li>Bind or unbind a service to an application</li>
+<li>Rename a space</li>
+<li>View the status, number of instances, service bindings, and resource use of each application in the space</li>
+<li>Change the number of instances, memory allocation, and disk limit of each application in the space</li>
+<li>Associate an internal or external URL with an application</li>
+</ul>
+
+<h4>Space Auditor</h4>
+
+<p>Assign this role to people who need to view but not edit the space.</p>
+
+<p>A Space Auditor can:</p>
+
+<ul>
+<li>View the status, number of instances, service bindings, and resource use of each application in the space</li>
+</ul>
+
+      
+
+      
+
+      
+    </p>
+
+      
+    
+</div>
+    
+</body>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta id="metaKeywords" content="Cloud Foundry Introduction" name="keywords">
+<title>Cloud Foundry 简介</title>
+<link rel="stylesheet" href="../../stylesheets/styles.css">
+<link rel="stylesheet" href="../../stylesheets/custom.css">
+</head>
+<body>
+<div class="detailBlog">
+	<h1 align="center">How Applications Are Staged </h1>
+
+	<p class="view">
+           
+          <h1 class="title-container">
+            How Applications Are Staged
+          </h1>
+            <div id="js-quick-links">
+              
+            </div>
+        <div style="" class="sticky-wrapper"><div class="to-top" id="js-to-top">
+          <a href="#top" title="back to top"></a>
+        </div></div>
+        <p><img src="images/app_push_flow_diagram.png" height="100%" width="100%"></p>
+
+<ol>
+<li><p>At the command line, the developer enters the directory containing her application and uses the cf command line tool to issue a push command.</p></li>
+<li><p>The cf command line tool tells the Cloud Controller to create a record for the application.</p></li>
+<li><p>The Cloud Controller stores the application metadata (e.g. the app name, number of instances the user specified, and the buildpack).</p></li>
+<li><p>The cf command line tool uploads the application files.</p></li>
+<li><p>The Cloud Controller stores the raw application files in the blobstore.</p></li>
+<li><p>The cf command line tool issues an app start command.</p></li>
+<li><p>Because the app has not already been staged, the Cloud Controller chooses a DEA instance from the DEA pool to stage the application.
+The staging DEA uses the instructions in the buildpack to stage the application.</p></li>
+<li><p>The staging DEA streams the output of the staging process so the developer can troubleshoot application staging problems.</p></li>
+<li><p>The staging DEA packages the resulting staged application into a tarball called a “droplet” and stores it in the blobstore.
+The results are cached and used next time the application is staged.</p></li>
+<li><p>The staging DEA reports to the Cloud Controller that staging is complete.</p></li>
+<li><p>The Cloud Controller chooses one or more DEAs from the pool to run the staged application.</p></li>
+<li><p>The running DEAs report the status of the application to the Cloud Controller.</p></li>
+</ol>
+
+      
+    </p>
+
+      
+    
+</div>
+    
+</body>
+</html>
